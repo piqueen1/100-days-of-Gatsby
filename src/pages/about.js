@@ -1,4 +1,6 @@
 import * as React from "react"
+import Styled from "styled-components"
+import { Link } from "gatsby"
 
 // styles
 const pageStyles = {
@@ -14,16 +16,43 @@ const headingStyles = {
 const headingAccentStyles = {
   color: "#663399",
 }
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+
+const NavItem = Styled(Link)`
+  text-decoration: none;
+  color: #663399;
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0 1vw;
+  transition: all 200ms ease-in;
+  position: relative;
+
+  :after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0%;
+    content: ".";
+    color: transparent;
+    background: black;
+    height: 1px;
+    transition: all 0.4s ease-in;
+  }
+
+  :hover {
+    color: black;
+    text-transform: uppercase;
+    ::after {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px 0;
+    font-size: 1.5rem;
+    z-index: 6;
+  }
+`
 
 // markup
 const AboutPage = () => {
@@ -38,13 +67,11 @@ const AboutPage = () => {
           🎉🎉🎉
         </span>
       </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/about.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
+      <NavItem to="/">Home</NavItem>
+      <NavItem to="/about">About Us</NavItem>
+      <NavItem to="/chico">Chico</NavItem>
+      <NavItem to="/redding">Redding</NavItem>
+      <NavItem to="/sacramento">Sacramento</NavItem>
     </main>
   )
 }
