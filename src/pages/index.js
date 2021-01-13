@@ -97,7 +97,8 @@ const links = [
 ]
 
 // markup
-const IndexPage = () => {
+const IndexPage = (props) => {
+  console.log(props)
   return (
     <main style={pageStyles}>
       <title>Home Page</title>

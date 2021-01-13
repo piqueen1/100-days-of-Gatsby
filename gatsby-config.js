@@ -1,13 +1,14 @@
 module.exports = {
   siteMetadata: {
     title: "AudioCORE",
+    siteUrl: "https://www.google.com"
   },
   plugins: [
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: "fGtf9Sn7_JDsHImITVeFpKfdFUAH7SFJcWG-DUkiMYk",
-        spaceId: "nay0f8rrd6tl",
+        accessToken: "wgLnV90q7WemK1FCF3vzkCtCGlQhCnJysCYpwqF8f0s",
+        spaceId: "vc3arzdx0ks5",
       },
     },
     "gatsby-plugin-styled-components",
